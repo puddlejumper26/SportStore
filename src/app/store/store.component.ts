@@ -7,19 +7,34 @@ import { ProductRepository } from '../model/product.repository';
   templateUrl: 'store.component.html',
 })
 export class StoreComponent {
-  public selectCategory = null;
+  public selectedCategory = null;
 
   constructor(private repository: ProductRepository) {}
 
   get products(): Product[] {
-    return this.repository.getProducts(this.selectCategory);
+    console.log('this.selectedCategory -> ', this.selectedCategory);
+    return this.repository.getProducts(this.selectedCategory);
   }
 
   get categories(): string[] {
+    console.log('this.repository.getCategories() -> ', this.repository.getCategories());
     return this.repository.getCategories();
   }
 
   changeCategory(newCategory?: string){
-    this.selectCategory = newCategory;
+    console.log('newCategory -> ', newCategory)
+    this.selectedCategory = newCategory;
   }
 }
+
+// console.log('this.selectedCategory -> ', this.selectedCategory);
+// ->
+
+
+
+// console.log('this.repository.getCategories() -> ', this.repository.getCategories());
+// ->
+
+
+// console.log('newCategory -> ', newCategory)
+// ->
