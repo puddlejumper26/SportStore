@@ -19,9 +19,9 @@ export class ProductRepository {
 
   getProducts(category: string = null): Product[] {
 
-    console.log('ProductReposity - products.filter ->', this.products.filter(
-      (p) => category == null || category === p.category
-    ));
+    // console.log('ProductReposity - products.filter ->', this.products.filter(
+    //   (p) => category == null || category === p.category
+    // ));
 
     return this.products.filter(
       (p) => category == null || category === p.category
@@ -34,7 +34,7 @@ export class ProductRepository {
 
   getCategories(): string[] {
 
-    console.log('ProductReposity - categories -> ', this.categories);
+    // console.log('ProductReposity - categories -> ', this.categories);
 
     return this.categories;
   }
