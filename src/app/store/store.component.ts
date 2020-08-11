@@ -14,7 +14,7 @@ export class StoreComponent {
 
   constructor(private repository: ProductRepository) {}
 
-  //根据this.selectedCategory的值（如Category 1）来生成新的数组，如果点击Category 1的按钮，则生成下列数组
+  // 根据this.selectedCategory的值（如Category 1）来生成新的数组，如果点击Category 1的按钮，则生成下列数组
   // [Product, Product, Product, Product, Product]
   // 0: Product {id: 1, name: "Product 1", category: "Category 1", description: "Product 1 (Category 1)", price: 100}
   // 1: Product {id: 2, name: "Product 2", category: "Category 1", description: "Product 2 (Category 1)", price: 100}
@@ -25,7 +25,7 @@ export class StoreComponent {
   get products(): Product[] {
     // console.log('this.selectedCategory -> ', this.selectedCategory);
     // console.log('this.repository.getProducts(this.selectedCategory) -> ', this.repository.getProducts(this.selectedCategory));
-    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+    const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
     return this.repository
     .getProducts(this.selectedCategory)
     .slice(pageIndex, pageIndex + this.productsPerPage);
@@ -43,12 +43,16 @@ export class StoreComponent {
 
   changePage(newPage: number) {
     this.selectedPage = newPage;
-    console.log(this.selectedPage)
+    // console.log(this.selectedPage);
   }
 
   changePageSize(newSize: number) {
     this.productsPerPage = Number(newSize);
     this.selectedPage = 1;
+  }
+
+  get pageCount():number{
+    return Math.ceil(this.repository.getProducts(this.selectedCategory).length/this.productsPerPage)
   }
 
   get pageNumbers(): number[] {
@@ -63,17 +67,17 @@ export class StoreComponent {
   }
 }
 
-// console.log('this.selectedCategory -> ', this.selectedCategory);
-// ->
+  // console.log('this.selectedCategory -> ', this.selectedCategory);
+  // ->
 
-// console.log('this.repository.getCategories() -> ', this.repository.getCategories());
-// ->
-// ["Category 1", "Category 2", "Category 3"]
-// 0: "Category 1"
-// 1: "Category 2"
-// 2: "Category 3"
-// length: 3
+  // console.log('this.repository.getCategories() -> ', this.repository.getCategories());
+  // ->
+  // ["Category 1", "Category 2", "Category 3"]
+  // 0: "Category 1"
+  // 1: "Category 2"
+  // 2: "Category 3"
+  // length: 3
 
-// console.log('newCategory -> ', newCategory)
-// -> newCategory 和 selectedCategory 一直都是一样的，因为这一步将其赋值给了selectedCategory
-// 所以这里如果点击 Category 1 的按钮，则两者都显示 Category 1
+  // console.log('newCategory -> ', newCategory)
+  // -> newCategory 和 selectedCategory 一直都是一样的，因为这一步将其赋值给了selectedCategory
+  // 所以这里如果点击 Category 1 的按钮，则两者都显示 Category 1

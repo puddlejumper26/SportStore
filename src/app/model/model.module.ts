@@ -1,6 +1,6 @@
-import { NgModule } from "@angular/core";
-import { ProductRepository } from "./product.repository";
-import { StaticDataSource } from "./static.datasource";
+import { NgModule } from '@angular/core';
+import { ProductRepository } from './product.repository';
+import { StaticDataSource } from './static.datasource';
 
 @NgModule({
     providers: [ProductRepository, StaticDataSource]
