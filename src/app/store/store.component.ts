@@ -9,6 +9,9 @@ import { ProductRepository } from '../model/product.repository';
 export class StoreComponent {
   public selectedCategory = null;
 
+  public productsPerPage = 4;
+  public selectedPage = 1;
+
   constructor(private repository: ProductRepository) {}
 
   //根据this.selectedCategory的值（如Category 1）来生成新的数组，如果点击Category 1的按钮，则生成下列数组
@@ -20,9 +23,12 @@ export class StoreComponent {
   // 4: Product {id: 5, name: "Product 5", category: "Category 1", description: "Product 5 (Category 1)", price: 100}
   // length: 5
   get products(): Product[] {
-    console.log('this.selectedCategory -> ', this.selectedCategory);
-    console.log('this.repository.getProducts(this.selectedCategory) -> ', this.repository.getProducts(this.selectedCategory));
-    return this.repository.getProducts(this.selectedCategory);
+    // console.log('this.selectedCategory -> ', this.selectedCategory);
+    // console.log('this.repository.getProducts(this.selectedCategory) -> ', this.repository.getProducts(this.selectedCategory));
+    let pageIndex = (this.selectedPage - 1) * this.productsPerPage;
+    return this.repository
+    .getProducts(this.selectedCategory)
+    .slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {
@@ -30,16 +36,35 @@ export class StoreComponent {
     return this.repository.getCategories();
   }
 
-  changeCategory(newCategory?: string){
+  changeCategory(newCategory?: string) {
     // console.log('newCategory -> ', newCategory)
     this.selectedCategory = newCategory;
+  }
+
+  changePage(newPage: number) {
+    this.selectedPage = newPage;
+    console.log(this.selectedPage)
+  }
+
+  changePageSize(newSize: number) {
+    this.productsPerPage = Number(newSize);
+    this.selectedPage = 1;
+  }
+
+  get pageNumbers(): number[] {
+    return Array(
+      Math.ceil(
+        this.repository.getProducts(this.selectedCategory).length /
+          this.productsPerPage
+      )
+    )
+      .fill(0)
+      .map((x, i) => i + 1);
   }
 }
 
 // console.log('this.selectedCategory -> ', this.selectedCategory);
 // ->
-
-
 
 // console.log('this.repository.getCategories() -> ', this.repository.getCategories());
 // ->
@@ -48,7 +73,6 @@ export class StoreComponent {
 // 1: "Category 2"
 // 2: "Category 3"
 // length: 3
-
 
 // console.log('newCategory -> ', newCategory)
 // -> newCategory 和 selectedCategory 一直都是一样的，因为这一步将其赋值给了selectedCategory
