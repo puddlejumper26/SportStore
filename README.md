@@ -1,10 +1,13 @@
 # Desc 
 
 This project is built based on the info provided by 'Pro Angular 6 third edition'. Trying to realize most of the functions of Angular inside this APP
+- Router
+- Service
+- Data binding
 
 # Demo (In Progress)
 
-- Seems not working right now though local running is perfect,  [LINK](https://puddlejumper26.github.io/sports-store/)
+- [LINK](https://puddlejumper26.github.io/SportStore/)
 - But I am working on it everyday, almost!
 
 # Tech Stack & IDE
