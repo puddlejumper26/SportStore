@@ -19,7 +19,10 @@ This project is trying to realize most of the functions of Angular : )
 
 ## Route Guard 
 
-## Authentication
+### [What is Route Guard](https://github.com/puddlejumper26/blogs/issues/153)
+ - 4 attributes to allow route to be activated or leave `canActivate`, `canActivateChild`,`canDeactivate`,`canLoad`
+ 
+### Authentication
 
 ## Restful web
 
