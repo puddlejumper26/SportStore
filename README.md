@@ -1,9 +1,6 @@
 # Desc 
 
-This project is built based on the info provided by 'Pro Angular 6 third edition'. Trying to realize most of the functions of Angular inside this APP
-- Router
-- Service
-- Data binding
+This project is trying to realize most of the functions of Angular : )
 
 # Demo (In Progress)
 
