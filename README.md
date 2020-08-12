@@ -19,6 +19,8 @@ This project is trying to realize most of the functions of Angular : )
 
 ## Directive
 
+#### [counter.directive.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/counter.directive.ts)
+
 ## Route Guard 
 
 #### [What is Route Guard](https://github.com/puddlejumper26/blogs/issues/153)
