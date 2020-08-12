@@ -1,5 +1,5 @@
-import { CheckoutComponent } from './store/checkout.component';
-import { CartDetailComponent } from './store/cartDetail.component';
+import { CheckoutComponent } from './store/cart/checkout.component';
+import { CartDetailComponent } from './store/cart/cartDetail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreComponent } from './store/store.component';
