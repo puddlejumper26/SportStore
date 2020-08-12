@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductRepository } from '../model/product.repository';
+import { Cart } from '../model/cart.model';
 
 @Component({
   selector: 'store',
@@ -12,7 +13,7 @@ export class StoreComponent {
   public productsPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repository: ProductRepository) {}
+  constructor(private repository: ProductRepository, private cart: Cart) {}
 
   // 根据this.selectedCategory的值（如Category 1）来生成新的数组，如果点击Category 1的按钮，则生成下列数组
   // [Product, Product, Product, Product, Product]
@@ -55,6 +56,11 @@ export class StoreComponent {
     return Math.ceil(this.repository.getProducts(this.selectedCategory).length/this.productsPerPage)
   }
 
+  addProductToCart(product: Product){
+    this.cart.addLine(product);
+  }
+
+  // 在第七章结束后就被废弃掉了，因为这里是hard code
   get pageNumbers(): number[] {
     return Array(
       Math.ceil(
