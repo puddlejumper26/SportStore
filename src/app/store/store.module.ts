@@ -1,5 +1,5 @@
 import { RouterModule } from '@angular/router';
-import { CheckoutComponent } from './cart/checkout.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { CartDetailComponent } from './cart/cartDetail.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
