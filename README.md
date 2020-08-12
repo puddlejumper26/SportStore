@@ -1,3 +1,5 @@
+<h1 align="center">Sport Store Project</h1>
+
 # Desc 
 
 This project is trying to realize most of the functions of Angular : )
