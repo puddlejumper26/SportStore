@@ -13,7 +13,7 @@ This project is trying to realize most of the functions of Angular : )
 - Angular 9, TypeScript, Bootstrap(4.1.1), HTML5, Json-Server  
 - VS Code
 
-# Skills / Techs implemented
+# Skills / Functions implemented
 
 ## Service
 
