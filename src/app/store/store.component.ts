@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductRepository } from '../model/product.repository';
 import { Cart } from '../model/cart.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'store',
@@ -13,7 +14,11 @@ export class StoreComponent {
   public productsPerPage = 4;
   public selectedPage = 1;
 
-  constructor(private repository: ProductRepository, private cart: Cart) {}
+  constructor(
+    private repository: ProductRepository,
+    private cart: Cart,
+    private router: Router
+  ) {}
 
   // 根据this.selectedCategory的值（如Category 1）来生成新的数组，如果点击Category 1的按钮，则生成下列数组
   // [Product, Product, Product, Product, Product]
@@ -28,8 +33,8 @@ export class StoreComponent {
     // console.log('this.repository.getProducts(this.selectedCategory) -> ', this.repository.getProducts(this.selectedCategory));
     const pageIndex = (this.selectedPage - 1) * this.productsPerPage;
     return this.repository
-    .getProducts(this.selectedCategory)
-    .slice(pageIndex, pageIndex + this.productsPerPage);
+      .getProducts(this.selectedCategory)
+      .slice(pageIndex, pageIndex + this.productsPerPage);
   }
 
   get categories(): string[] {
@@ -52,12 +57,16 @@ export class StoreComponent {
     this.selectedPage = 1;
   }
 
-  get pageCount():number{
-    return Math.ceil(this.repository.getProducts(this.selectedCategory).length/this.productsPerPage)
+  get pageCount(): number {
+    return Math.ceil(
+      this.repository.getProducts(this.selectedCategory).length /
+        this.productsPerPage
+    );
   }
 
-  addProductToCart(product: Product){
+  addProductToCart(product: Product) {
     this.cart.addLine(product);
+    this.router.navigateByUrl('/cart');
   }
 
   // 在第七章结束后就被废弃掉了，因为这里是hard code
@@ -73,17 +82,17 @@ export class StoreComponent {
   }
 }
 
-  // console.log('this.selectedCategory -> ', this.selectedCategory);
-  // ->
+// console.log('this.selectedCategory -> ', this.selectedCategory);
+// ->
 
-  // console.log('this.repository.getCategories() -> ', this.repository.getCategories());
-  // ->
-  // ["Category 1", "Category 2", "Category 3"]
-  // 0: "Category 1"
-  // 1: "Category 2"
-  // 2: "Category 3"
-  // length: 3
+// console.log('this.repository.getCategories() -> ', this.repository.getCategories());
+// ->
+// ["Category 1", "Category 2", "Category 3"]
+// 0: "Category 1"
+// 1: "Category 2"
+// 2: "Category 3"
+// length: 3
 
-  // console.log('newCategory -> ', newCategory)
-  // -> newCategory 和 selectedCategory 一直都是一样的，因为这一步将其赋值给了selectedCategory
-  // 所以这里如果点击 Category 1 的按钮，则两者都显示 Category 1
+// console.log('newCategory -> ', newCategory)
+// -> newCategory 和 selectedCategory 一直都是一样的，因为这一步将其赋值给了selectedCategory
+// 所以这里如果点击 Category 1 的按钮，则两者都显示 Category 1

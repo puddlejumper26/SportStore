@@ -15,14 +15,14 @@ export class Cart {
         this.lines.push(new CartLine(product,quantity));
     }
     this.recalculate();
-  }
+}
 
-  updateQuantity(product: Product, quantity: number){
-      let line = this.lines.find(line => line.product.id === product.id);
-      if(line != undefined){
+updateQuantity(product: Product, quantity: number){
+    let line = this.lines.find(line => line.product.id === product.id);
+    if(line != undefined){
         line.quantity = Number(quantity);
-      }
-      this.recalculate();
+    }
+    this.recalculate();
   }
 
   removeLine(id: number){
