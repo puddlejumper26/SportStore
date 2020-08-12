@@ -36,7 +36,7 @@ This project is trying to realize most of the functions of Angular : )
  - 4 attributes to allow route to be activated or leave `canActivate`, `canActivateChild`,`canDeactivate`,`canLoad`
 
 #### [storeFirst.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/storeFirst.guard.ts)
-- when customer on pages other than /store, e.g. /cart, and refresh the page, then will automatically direct to /store.
+- `canActivate`. when customer on pages other than /store, e.g. /cart, and refresh the page, then will automatically direct to /store.
 
 ## Authentication
 
