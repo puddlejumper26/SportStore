@@ -2,7 +2,7 @@
 
 # 1.0 Desc 
 
-This project is trying to realize most of the functions of Angular : )  Check point 4.0 (https://github.com/puddlejumper26/SportStore/blob/master/README.md#40-skills--functions-implemented)
+This project is trying to realize most of the functions of Angular : )  Check point 4.0 [Click here](https://github.com/puddlejumper26/SportStore/blob/master/README.md#40-skills--functions-implemented)
 
 # 2.0 Demo (In Progress)
 
