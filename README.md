@@ -15,6 +15,8 @@ This project is trying to realize most of the functions of Angular : )
 
 # Skills / Functions implemented
 
+## Form Validation
+
 ## Service
 
 #### [static.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/static.datasource.ts)
