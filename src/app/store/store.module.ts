@@ -11,7 +11,7 @@ import { cartSummaryComponent } from './cart/cartSummary.component';
 
 @NgModule({
   imports: [ModelModule, BrowserModule, FormsModule, RouterModule],
-  declarations: [StoreComponent,CounterDirective, cartSummaryComponent, CartDetailComponent,CheckoutComponent],
-  exports: [StoreComponent,CartDetailComponent,CheckoutComponent],
+  declarations: [StoreComponent, CounterDirective, cartSummaryComponent, CartDetailComponent, CheckoutComponent],
+  exports: [StoreComponent, CartDetailComponent, CheckoutComponent],
 })
 export class StoreModule {}
