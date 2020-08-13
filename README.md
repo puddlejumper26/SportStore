@@ -2,7 +2,7 @@
 
 # 1.0 Desc 
 
-This project is trying to realize most of the functions of Angular : )
+This project is trying to realize most of the functions of Angular : )  Check point 4.0
 
 # 2.0 Demo (In Progress)
 
