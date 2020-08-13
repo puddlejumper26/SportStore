@@ -1,23 +1,23 @@
 <h1 align="center">Sport Store Project</h1>
 
-# Desc 
+# 1.0 Desc 
 
 This project is trying to realize most of the functions of Angular : )
 
-# Demo (In Progress)
+# 2.0 Demo (In Progress)
 
 - [LINK](https://puddlejumper26.github.io/SportStore/)
 - But I am working on it everyday, almost!
 
-# Tech Stack & IDE
+# 3.0 Tech Stack & IDE
 - Angular 9, TypeScript, Bootstrap(4.1.1), HTML5, Json-Server  
 - VS Code
 
-# Skills / Functions implemented
+# 4.0 Skills / Functions implemented
 
-## Form Validation
+## 4.1 Form Validation
 
-## Service
+## 4.2 Service
 
 #### [static.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/static.datasource.ts)
 - provide the mock static datasource for the app, it is used at the beginning for buidling the app, afterwards it is replaced by the RESTFUL Web service
@@ -26,13 +26,13 @@ This project is trying to realize most of the functions of Angular : )
 #### [cart.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/cart.model.ts)
 - provide all the potential functions and methods of Cart
 
-## Directive
+## 4.3 Directive
 
 #### [counter.directive.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/counter.directive.ts)
 - this is an `iterative structure directive`, like *ngFor, but built by author
 - to display paginations in a more professional way, rather than hard coding
 
-## Route Guard 
+## 4.4 Route Guard 
 
  [What is Route Guard](https://github.com/puddlejumper26/blogs/issues/153)
  - 4 attributes to allow route to be activated or leave `canActivate`, `canActivateChild`,`canDeactivate`,`canLoad`
@@ -40,8 +40,8 @@ This project is trying to realize most of the functions of Angular : )
 #### [storeFirst.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/storeFirst.guard.ts)
 - `canActivate`. When customer on pages other than '/store', e.g. '/cart', and refresh the page, then will automatically redirect to '/store'.
 
-## Authentication
+## 4.5 Authentication
 
-## Restful web
+## 4.6 Restful web
 
 
