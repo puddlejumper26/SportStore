@@ -53,4 +53,5 @@ This project is trying to realize most of the functions of Angular : )  Check po
 ## 4.7 Testing
 
 #### [cartSummary.component.spec.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/cart/cartSummary.component.spec.ts)
+- [routerLink] [disabled]
 
