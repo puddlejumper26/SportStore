@@ -17,6 +17,12 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 4.1 Form Validation
 
+#### 4.1.1 Template Form Validation
+- directly inside the template, here is [checkout.component.html](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.html)
+
+#### 4.1.2 Reactive Form Validation
+- put all the limits inside a ts file
+
 ## 4.2 Service
 
 #### [static.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/static.datasource.ts)
@@ -43,5 +49,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 ## 4.5 Authentication
 
 ## 4.6 Restful web
+
+## 4.7 Testing
 
 

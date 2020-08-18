@@ -4,7 +4,8 @@ import { Order } from 'src/app/model/order.model';
 import { NgForm } from '@angular/forms';
 
 @Component({
-    templateUrl: 'checkout.component.html',
+    templateUrl: 'checkout-reactive-form.component.html',
+    // templateUrl: 'checkout.component.html',
     styleUrls: ['checkout.component.css']
 })
 export class CheckoutComponent{
@@ -15,12 +16,12 @@ export class CheckoutComponent{
 
     submitOrder(form: NgForm){
         this.submitted = true;
-        if(form.valid){
-            this.repository.saveOrder(this.order).subscribe( order=> {
+        if (form.valid){
+            this.repository.saveOrder(this.order).subscribe( order => {
                 this.order.clear();
                 this.orderSent = true;
                 this.submitted = false;
-            })
+            });
         }
     }
 }
