@@ -18,9 +18,7 @@
           </thead>
           <tbody>
             <tr *ngIf="cart.lines.length == 0">
-              <td colspan="4" class="text-center">
-                Your cart is empty
-              </td>
+              <td colspan="4" class="text-center cart-is-empty">Your cart is empty</td>
             </tr>
             <tr *ngFor="let line of cart.lines">
               <td>
@@ -38,7 +36,7 @@
                 {{(line.lineTotal) | currency:"USD":true:"2.2-2" }}
               </td>
               <td class="text-center">
-                <button class="btn btn-sm btn-danger"
+                <button class="btn btn-sm btn-danger remove-button"
                         (click)="cart.removeLine(line.product.id)">
                   Remove
                 </button>
@@ -48,7 +46,7 @@
           <tfoot>
             <tr>
               <td colspan="3" class="text-right">Total:</td>
-              <td class="text-right">
+              <td class="text-right total-price">
                 {{cart.cartPrice | currency:"USD":"symbol":"2.2-2"}}
               </td>
             </tr>
@@ -59,13 +57,9 @@
     <div class="row">
       <div class="col">
       <div class="text-center">
-        <button class="btn btn-primary m-1" routerLink="/store">
-            Continue Shopping
-        </button>
-        <button class="btn btn-secondary m-1" routerLink="/checkout"
-                [disabled]="cart.lines.length == 0">
-          Checkout
-        </button>
+        <button class="btn btn-primary m-1 continue-shopping" routerLink="/store">Continue Shopping</button>
+        <button class="btn btn-secondary m-1 checkout-button" routerLink="/checkout"
+                [disabled]="cart.lines.length == 0">Checkout</button>
       </div>
     </div>
   </div>

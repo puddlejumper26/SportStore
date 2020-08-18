@@ -1,5 +1,5 @@
 import { CheckoutComponent } from './store/checkout/checkout.component';
-import { CartDetailComponent } from './store/cart/cartDetail.component';
+import { cartDetailComponent } from './store/cart/cartDetail.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreComponent } from './store/store.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    component: CartDetailComponent,
+    component: cartDetailComponent,
     canActivate: [StoreFirstGuard],
   },
   {
