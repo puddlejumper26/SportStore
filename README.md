@@ -50,10 +50,12 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 4.6 Restful web
 
-## 4.7 Testing
+## 4.7.1 Testing Jasmine
 
 #### [cartSummary.component.spec.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/cart/cartSummary.component.spec.ts)
 - [routerLink] , [disabled]
+
+## 4.7.2 Testing Protractor 
 
 ## 4.8 http interceptor
 - Angular 开发实战 p65
