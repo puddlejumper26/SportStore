@@ -11,9 +11,7 @@ fdescribe('cartDetailComponent', () => {
   let component: cartDetailComponent;
   let debugElement: DebugElement;
 
-  // const mockProduct = new Product(1, 'Product 1', 'Category 1', 'Product 1 (Category 1)', 100);
-  // const mockCartLine = new CartLine( mockProduct, 1);
-  // const mockCart = {[mockCartLine], itemCount: 2, cartPrice: 200};
+  let mock
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -92,6 +90,7 @@ fdescribe('cartDetailComponent', () => {
     });
   });
 
+  // this might be tested inside the cart.model.ts this service
   xit('Total value should be the sum of all subtol values', () => {
       component.cart.lines.length = 0;
       fixture.detectChanges();
