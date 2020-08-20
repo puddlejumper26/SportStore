@@ -50,6 +50,9 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 4.6 Restful web
 
+#### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
+- this is to replace the local StaticDataSource, in order to enable the futher interaction between the data source `data.js` and user interface
+
 ## 4.7.1 Testing Jasmine
 
 #### [cartSummary.component.spec.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/cart/cartSummary.component.spec.ts)
