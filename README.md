@@ -55,3 +55,5 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### [cartSummary.component.spec.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/cart/cartSummary.component.spec.ts)
 - [routerLink] , [disabled]
 
+## 4.8 http interceptor
+- Angular 开发实战
