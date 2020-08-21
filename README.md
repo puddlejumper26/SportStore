@@ -53,13 +53,15 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
 - this is to replace the local StaticDataSource, in order to enable the futher interaction between the data source `data.js` and user interface
 
-## 4.7.1 Testing Jasmine
+## 4.7 Testing
+
+### 4.7.1 Jasmine
 
 #### [cartSummary.component.spec.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/cart/cartSummary.component.spec.ts)
 - [routerLink] , [disabled]
 
-## 4.7.2 Testing Protractor 
+### 4.7.2 Testing Protractor 
 - Angular 开发实战 p108
 
-## 4.8 http interceptor
+## 4.8 Http Interceptor
 - Angular 开发实战 p65
