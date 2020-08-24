@@ -9,7 +9,8 @@ import {RestDatasource} from './rest.datasource';
 
 @NgModule({
     imports: [HttpClientModule],
-    providers: [ProductRepository, Cart, OrderRepository, Order,
-      { provide: StaticDataSource, useClass: RestDatasource}]
+    providers: [ProductRepository, Cart, OrderRepository, Order, StaticDataSource
+      // { provide: StaticDataSource, useClass: RestDatasource}
+      ]
 })
 export class ModelModule { }
