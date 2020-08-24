@@ -10,7 +10,9 @@ This project is trying to realize most of the functions of Angular : )  Check po
 - But I am working on it everyday, almost!
 
 # 3.0 Tech Stack & IDE
-- Angular 9, TypeScript, Git, Bootstrap(4.1.1), HTML5, Json-Server  
+- Angular 9, TypeScript, Git, Bootstrap(4.1.1), HTML5
+- JSON-Server (could not run remote, only local for CRUD)
+- my JSON-Server (online fake REST Serve)(https://my-json-server.typicode.com/)
 - VS Code $ IntelliJ
 
 # 4.0 Skills / Functions implemented
