@@ -1,3 +1,6 @@
+<!---->
+<!--Template driven form-->
+<!---->
 <div class="container-fluid">
     <div class="row">
       <div class="col bg-dark text-white">
@@ -24,6 +27,15 @@
               [(ngModel)]="order.name" required />
       <span *ngIf="submitted && name.invalid" class="text-danger">
         Please enter your name
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Gender</label>
+      <input class="form-control" #gender="ngModel" name="gender"
+             [(ngModel)]="order.gender" required />
+      <span *ngIf="submitted && gender.invalid" class="text-danger">
+        Please enter gender
       </span>
     </div>
 

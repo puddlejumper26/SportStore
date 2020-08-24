@@ -1,18 +1,23 @@
 import { OrderRepository } from './../../model/order.repository';
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Order } from 'src/app/model/order.model';
-import { NgForm } from '@angular/forms';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 
 @Component({
-    templateUrl: 'checkout-reactive-form.component.html',
-    // templateUrl: 'checkout.component.html',
+    // templateUrl: 'checkout-reactive-form.component.html',
+    templateUrl: 'checkout.component.html',
     styleUrls: ['checkout.component.css']
 })
-export class CheckoutComponent{
+export class CheckoutComponent implements OnInit{
+  // ***********
+  // template-driven form
+  // ***********
     orderSent: boolean = false;
     submitted: boolean = false;
 
     constructor(public repository: OrderRepository, public order: Order){}
+
+    ngOnInit(): void{}
 
     submitOrder(form: NgForm){
         this.submitted = true;
@@ -24,4 +29,21 @@ export class CheckoutComponent{
             });
         }
     }
+
+  // ***********
+  // reactive form
+  // ***********
+
+  // validateForm: FormGroup;
+  // orderSent: boolean = false;
+  // submitted: boolean = false;
+  //
+  // constructor(private fb: FormBuilder) {
+  // }
+  //
+  // ngOnInit(): void{
+  //   this.validateForm = this.fb.group({
+  //
+  //   })
+  // }
 }
