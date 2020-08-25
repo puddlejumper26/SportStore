@@ -17,9 +17,22 @@
     <button class="btn btn-primary" routerLink="/store">Return to Store</button>
   </div>
 
+
+
   <!-- display before submit is sent -->
   <form *ngIf="!orderSent" #form="ngForm" novalidate
         (ngSubmit)="submitOrder(form)" class="m-2">
+
+<!--    To display all the problems on the top of the page-->
+    <div *ngIf="getFormValidationMessages(form)"
+         class="bg-danger text-white p-2 mb-2" >
+      There are some problems with the form
+      <ul>
+        <li *ngFor="let error of getFormValidationMessages(form)">
+          {{error}}
+        </li>
+      </ul>
+    </div>
 
     <div class="form-group">
       <label>Name</label>
