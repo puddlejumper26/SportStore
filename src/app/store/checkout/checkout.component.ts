@@ -40,7 +40,7 @@ export class CheckoutComponent implements OnInit {
       for (let errorName in state.errors) {
         switch (errorName) {
           case 'required':
-            messages.push(`You must enter a ${thing}`);
+            messages.push(`${thing} is required`);
             break;
           case 'minlength':
             messages.push(`A ${thing} must be at least ${state.errors['minlength'].requiredLength}`);

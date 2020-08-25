@@ -24,7 +24,7 @@
         (ngSubmit)="submitOrder(form)" class="m-2">
 
 <!--    To display all the problems on the top of the page-->
-    <div *ngIf="getFormValidationMessages(form)"
+    <div *ngIf="submitted && form.invalid"
          class="bg-danger text-white p-2 mb-2" >
       There are some problems with the form
       <ul>
@@ -40,7 +40,7 @@
       <input class="form-control ng-pristine ng-invalid ng-touched"
              name="firstName"
              required
-             minlength="5"
+             minlength="2"
              pattern="^[A-Za-z]+$"
              #firstName="ngModel"
              [(ngModel)]="order.firstName">
@@ -53,11 +53,11 @@
 
 <!--  Last  Name-->
     <div class="form-group">
-      <label>First Name</label>
+      <label>Last Name</label>
       <input class="form-control ng-pristine ng-invalid ng-touched"
              name="lastName"
              required
-             minlength="5"
+             minlength="2"
              pattern="^[A-Za-z]+$"
              #lastName="ngModel"
              [(ngModel)]="order.lastName">
@@ -68,59 +68,76 @@
       </ul>
     </div>
 
+<!--    <div class="form-group">-->
+<!--      <label>Gender</label>-->
+<!--      <input class="form-control" #gender="ngModel" name="gender"-->
+<!--             [(ngModel)]="order.gender" required />-->
+<!--      <span *ngIf="submitted && gender.invalid" class="text-danger">-->
+<!--        Please enter gender-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label>Address</label>-->
+<!--      <input class="form-control" #address="ngModel" name="address"-->
+<!--              [(ngModel)]="order.address" required />-->
+<!--      <span *ngIf="submitted && address.invalid" class="text-danger">-->
+<!--        Please enter your address-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label>City</label>-->
+<!--      <input class="form-control" #city="ngModel" name="city"-->
+<!--              [(ngModel)]="order.city" required />-->
+<!--      <span *ngIf="submitted && city.invalid" class="text-danger">-->
+<!--        Please enter your city-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label>State</label>-->
+<!--      <input class="form-control" #state="ngModel" name="state"-->
+<!--              [(ngModel)]="order.state" required />-->
+<!--      <span *ngIf="submitted && state.invalid" class="text-danger">-->
+<!--        Please enter your state-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label>Zip/Postal Code</label>-->
+<!--      <input class="form-control" #zip="ngModel" name="zip"-->
+<!--              [(ngModel)]="order.zip" required />-->
+<!--      <span *ngIf="submitted && zip.invalid" class="text-danger">-->
+<!--        Please enter your zip/postal code-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label>Country</label>-->
+<!--      <input class="form-control" #country="ngModel" name="country"-->
+<!--              [(ngModel)]="order.country" required />-->
+<!--      <span *ngIf="submitted && country.invalid" class="text-danger">-->
+<!--        Please enter your country-->
+<!--      </span>-->
+<!--    </div>-->
+
+<!--    Final Terms and Conditions-->
     <div class="form-group">
-      <label>Gender</label>
-      <input class="form-control" #gender="ngModel" name="gender"
-             [(ngModel)]="order.gender" required />
-      <span *ngIf="submitted && gender.invalid" class="text-danger">
-        Please enter gender
-      </span>
+      <input class="form-control ng-pristine ng-invalid ng-touched"
+             type="checkbox"
+             name="acceptTerms"
+             required
+             #acceptTerms="ngModel"
+             [(ngModel)]="order.acceptTerms">
+      <label>Accept Terms & Conditions</label>
+      <ul class="text-danger list-unstyled" *ngIf="(submitted || lastName.dirty) && acceptTerms.invalid">
+        <li *ngFor="let error of getValidationMessages(acceptTerms)">
+          {{error}}
+        </li>
+      </ul>
     </div>
 
-    <div class="form-group">
-      <label>Address</label>
-      <input class="form-control" #address="ngModel" name="address"
-              [(ngModel)]="order.address" required />
-      <span *ngIf="submitted && address.invalid" class="text-danger">
-        Please enter your address
-      </span>
-    </div>
-
-    <div class="form-group">
-      <label>City</label>
-      <input class="form-control" #city="ngModel" name="city"
-              [(ngModel)]="order.city" required />
-      <span *ngIf="submitted && city.invalid" class="text-danger">
-        Please enter your city
-      </span>
-    </div>
-
-    <div class="form-group">
-      <label>State</label>
-      <input class="form-control" #state="ngModel" name="state"
-              [(ngModel)]="order.state" required />
-      <span *ngIf="submitted && state.invalid" class="text-danger">
-        Please enter your state
-      </span>
-    </div>
-
-    <div class="form-group">
-      <label>Zip/Postal Code</label>
-      <input class="form-control" #zip="ngModel" name="zip"
-              [(ngModel)]="order.zip" required />
-      <span *ngIf="submitted && zip.invalid" class="text-danger">
-        Please enter your zip/postal code
-      </span>
-    </div>
-
-    <div class="form-group">
-      <label>Country</label>
-      <input class="form-control" #country="ngModel" name="country"
-              [(ngModel)]="order.country" required />
-      <span *ngIf="submitted && country.invalid" class="text-danger">
-        Please enter your country
-      </span>
-    </div>
 
     <div class="text-center">
       <button class="btn btn-secondary m-1" routerLink="/cart">Back</button>

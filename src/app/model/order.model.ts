@@ -13,6 +13,7 @@ export class Order{
     public zip: string;
     public country: string;
     public shipped: boolean = false;
+    public acceptTerms: boolean = false;
 
     constructor(public cart: Cart){}
 
@@ -21,6 +22,7 @@ export class Order{
         this.firstName = this.lastName = this.address = this.city = null;
         this.state = this.zip = this.country = null;
         this.shipped = false;
+        this.acceptTerms = false;
         this.cart.clear();
     }
 }
