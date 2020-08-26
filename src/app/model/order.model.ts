@@ -11,6 +11,7 @@ export class Order{
     public city: string;
     public state: string;
     public zip: number;
+    public email: string;
     public country: string;
     public shipped: boolean = false;
     public acceptTerms: boolean = false;
@@ -19,7 +20,7 @@ export class Order{
 
     clear(){
         this.id = null;
-        this.firstName = this.lastName = this.address = this.city = null;
+        this.firstName = this.lastName = this.address = this.city = this.email = null;
         this.state = this.zip = this.country = null;
         this.shipped = false;
         this.acceptTerms = false;

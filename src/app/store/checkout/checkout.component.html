@@ -112,31 +112,37 @@
 <!--zip code-->
     <div class="form-row">
 
-    <div class="form-group col">
-      <label>Zip/Postal Code</label>
-      <input class="form-control"
-             #zip="ngModel"
-             name="zip"
-             [(ngModel)]="order.zip"
-             required
-             minlength="3"
-             maxlength="10"
-             pattern="^\d*$"/>
-      <ul class="text-danger list-unstyled" *ngIf="(submitted || zip.dirty) && zip.invalid">
-        <li *ngFor="let error of getValidationMessages(zip)">
-          {{error}}
-        </li>
-      </ul>
-    </div>
+      <div class="form-group col">
+        <label>Zip/Postal Code</label>
+        <input class="form-control"
+               #zip="ngModel"
+               name="zip"
+               [(ngModel)]="order.zip"
+               required
+               minlength="3"
+               maxlength="10"
+               pattern="^\d*$"/>
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || zip.dirty) && zip.invalid">
+          <li *ngFor="let error of getValidationMessages(zip)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
 
-<!--    <div class="form-group col-3">-->
-<!--      <label>City</label>-->
-<!--      <input class="form-control" #city="ngModel" name="city"-->
-<!--              [(ngModel)]="order.city" required />-->
-<!--      <span *ngIf="submitted && city.invalid" class="text-danger">-->
-<!--        Please enter your city-->
-<!--      </span>-->
-<!--    </div>-->
+      <div class="form-group col-3">
+        <label>City</label>
+        <input class="form-control"
+               #city="ngModel"
+               name="city"
+               [(ngModel)]="order.city"
+               required
+               pattern="^[A-Za-z]+$"/>
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || city.dirty) && city.invalid">
+          <li *ngFor="let error of getValidationMessages(city)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
 
 <!--    <div class="form-group col-3">-->
 <!--      <label>State</label>-->
