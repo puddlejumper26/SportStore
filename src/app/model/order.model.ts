@@ -16,6 +16,7 @@ export class Order {
   public shipped: boolean = false;
   public acceptTerms: boolean = false;
   public password: string;
+  public confirmPassword: string;
 
   constructor(public cart: Cart) {
   }
@@ -23,7 +24,7 @@ export class Order {
   clear() {
     this.id = null;
     this.firstName = this.lastName = this.address = this.city = this.email = null;
-    this.state = this.zip = this.country = this.password = null;
+    this.state = this.zip = this.country = this.password = this.confirmPassword = null;
     this.shipped = false;
     this.acceptTerms = false;
     this.cart.clear();
