@@ -45,7 +45,7 @@ export class CheckoutComponent implements OnInit {
           case 'minlength':
             messages.push(`A ${thing} must be at least ${state.errors['minlength'].requiredLength}`);
             break;
-          case 'pattern':
+          case 'pattern' || '':
             messages.push(`The ${thing} contains illegal char`);
             break;
         }
