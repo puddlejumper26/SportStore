@@ -10,7 +10,7 @@ export class Order{
     public address: string;
     public city: string;
     public state: string;
-    public zip: string;
+    public zip: number;
     public country: string;
     public shipped: boolean = false;
     public acceptTerms: boolean = false;

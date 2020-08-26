@@ -34,9 +34,9 @@
       </ul>
     </div>
 
-<!--  First  Name-->
-    <div class="form-row">
 
+    <div class="form-row">
+<!-- Title -->
       <div class="form-group col">
         <label>Title</label>
         <select class="form-control"
@@ -57,7 +57,7 @@
         </ul>
       </div>
 
-
+<!--  First  Name-->
       <div class="form-group col-5">
         <label>First Name</label>
         <input class="form-control ng-pristine ng-invalid ng-touched"
@@ -90,20 +90,46 @@
           </li>
         </ul>
       </div>
-
-
     </div>
 
-<!--    <div class="form-group">-->
-<!--      <label>Address</label>-->
-<!--      <input class="form-control" #address="ngModel" name="address"-->
-<!--              [(ngModel)]="order.address" required />-->
-<!--      <span *ngIf="submitted && address.invalid" class="text-danger">-->
-<!--        Please enter your address-->
-<!--      </span>-->
-<!--    </div>-->
 
-<!--    <div class="form-group">-->
+<!-- Address -->
+    <div class="form-group">
+      <label>Address</label>
+      <input class="form-control ng-pristine ng-invalid ng-touched"
+             #address="ngModel"
+             name="address"
+             [(ngModel)]="order.address"
+             required
+             pattern="^[a-zA-Z0-9\s,'-]*$"/>
+      <ul class="text-danger list-unstyled" *ngIf="(submitted || address.dirty) && address.invalid">
+        <li *ngFor="let error of getValidationMessages(address)">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+
+<!--zip code-->
+    <div class="form-row">
+
+    <div class="form-group col">
+      <label>Zip/Postal Code</label>
+      <input class="form-control"
+             #zip="ngModel"
+             name="zip"
+             [(ngModel)]="order.zip"
+             required
+             minlength="3"
+             maxlength="10"
+             pattern="^\d*$"/>
+      <ul class="text-danger list-unstyled" *ngIf="(submitted || zip.dirty) && zip.invalid">
+        <li *ngFor="let error of getValidationMessages(zip)">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+
+<!--    <div class="form-group col-3">-->
 <!--      <label>City</label>-->
 <!--      <input class="form-control" #city="ngModel" name="city"-->
 <!--              [(ngModel)]="order.city" required />-->
@@ -112,7 +138,7 @@
 <!--      </span>-->
 <!--    </div>-->
 
-<!--    <div class="form-group">-->
+<!--    <div class="form-group col-3">-->
 <!--      <label>State</label>-->
 <!--      <input class="form-control" #state="ngModel" name="state"-->
 <!--              [(ngModel)]="order.state" required />-->
@@ -121,16 +147,9 @@
 <!--      </span>-->
 <!--    </div>-->
 
-<!--    <div class="form-group">-->
-<!--      <label>Zip/Postal Code</label>-->
-<!--      <input class="form-control" #zip="ngModel" name="zip"-->
-<!--              [(ngModel)]="order.zip" required />-->
-<!--      <span *ngIf="submitted && zip.invalid" class="text-danger">-->
-<!--        Please enter your zip/postal code-->
-<!--      </span>-->
-<!--    </div>-->
 
-<!--    <div class="form-group">-->
+
+<!--    <div class="form-group col-3">-->
 <!--      <label>Country</label>-->
 <!--      <input class="form-control" #country="ngModel" name="country"-->
 <!--              [(ngModel)]="order.country" required />-->
@@ -138,6 +157,8 @@
 <!--        Please enter your country-->
 <!--      </span>-->
 <!--    </div>-->
+
+    </div>
 
 <!--    Final Terms and Conditions-->
       <div class="form-group form-check">
