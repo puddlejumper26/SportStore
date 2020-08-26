@@ -6,7 +6,7 @@ export class Order{
     public id: number;
     public firstName: string;
     public lastName: string;
-    public gender: string;
+    public title: string;
     public address: string;
     public city: string;
     public state: string;

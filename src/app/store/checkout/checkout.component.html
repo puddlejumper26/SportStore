@@ -35,47 +35,64 @@
     </div>
 
 <!--  First  Name-->
-    <div class="form-group">
-      <label>First Name</label>
-      <input class="form-control ng-pristine ng-invalid ng-touched"
-             name="firstName"
-             required
-             minlength="2"
-             pattern="^[A-Za-z]+$"
-             #firstName="ngModel"
-             [(ngModel)]="order.firstName">
-      <ul class="text-danger list-unstyled" *ngIf="(submitted || firstName.dirty) && firstName.invalid">
-        <li *ngFor="let error of getValidationMessages(firstName)">
-          {{error}}
-        </li>
-      </ul>
-    </div>
+    <div class="form-row">
+
+      <div class="form-group col">
+        <label>Title</label>
+        <select class="form-control"
+               #title="ngModel"
+               name="title"
+               [(ngModel)]="order.title"
+                required>
+          <option value=""></option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+          <option value="Miss">Miss</option>
+        </select>
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || title.dirty) && title.invalid">
+          <li *ngFor="let error of getValidationMessages(title)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="form-group col-5">
+        <label>First Name</label>
+        <input class="form-control ng-pristine ng-invalid ng-touched"
+               name="firstName"
+               required
+               minlength="2"
+               pattern="^[A-Za-z]+$"
+               #firstName="ngModel"
+               [(ngModel)]="order.firstName">
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || firstName.dirty) && firstName.invalid">
+          <li *ngFor="let error of getValidationMessages(firstName)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
 
 <!--  Last  Name-->
-    <div class="form-group">
-      <label>Last Name</label>
-      <input class="form-control ng-pristine ng-invalid ng-touched"
-             name="lastName"
-             required
-             minlength="2"
-             pattern="^[A-Za-z]+$"
-             #lastName="ngModel"
-             [(ngModel)]="order.lastName">
-      <ul class="text-danger list-unstyled" *ngIf="(submitted || lastName.dirty) && lastName.invalid">
-        <li *ngFor="let error of getValidationMessages(lastName)">
-          {{error}}
-        </li>
-      </ul>
-    </div>
+      <div class="form-group col-5">
+        <label>Last Name</label>
+        <input class="form-control ng-pristine ng-invalid ng-touched"
+               name="lastName"
+               required
+               minlength="2"
+               pattern="^[A-Za-z]+$"
+               #lastName="ngModel"
+               [(ngModel)]="order.lastName">
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || lastName.dirty) && lastName.invalid">
+          <li *ngFor="let error of getValidationMessages(lastName)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
 
-<!--    <div class="form-group">-->
-<!--      <label>Gender</label>-->
-<!--      <input class="form-control" #gender="ngModel" name="gender"-->
-<!--             [(ngModel)]="order.gender" required />-->
-<!--      <span *ngIf="submitted && gender.invalid" class="text-danger">-->
-<!--        Please enter gender-->
-<!--      </span>-->
-<!--    </div>-->
+
+    </div>
 
 <!--    <div class="form-group">-->
 <!--      <label>Address</label>-->
@@ -123,20 +140,21 @@
 <!--    </div>-->
 
 <!--    Final Terms and Conditions-->
-    <div class="form-group">
-      <input class="form-control ng-pristine ng-invalid ng-touched"
-             type="checkbox"
-             name="acceptTerms"
-             required
-             #acceptTerms="ngModel"
-             [(ngModel)]="order.acceptTerms">
-      <label>Accept Terms & Conditions</label>
-      <ul class="text-danger list-unstyled" *ngIf="(submitted || lastName.dirty) && acceptTerms.invalid">
-        <li *ngFor="let error of getValidationMessages(acceptTerms)">
-          {{error}}
-        </li>
-      </ul>
-    </div>
+      <div class="form-group form-check">
+        <input class="form-check-input"
+               [ngClass]="{ 'is-invalid':submitted && acceptTerms.invalid }"
+               type="checkbox"
+               name="acceptTerms"
+               required
+               #acceptTerms="ngModel"
+               [(ngModel)]="order.acceptTerms">
+        <label class="form-check-label">Accept Terms & Conditions</label>
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || acceptTerms.dirty) && acceptTerms.invalid">
+          <li *ngFor="let error of getValidationMessages(acceptTerms)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
 
 
     <div class="text-center">
