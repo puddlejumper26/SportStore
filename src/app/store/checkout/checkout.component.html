@@ -196,6 +196,27 @@
     </div>
 
 
+<!-- Password -->
+    <div class="form-group">
+      <label>Password</label>
+      <input class="form-control"
+             #password="ngModel"
+             name="password"
+             [(ngModel)]="order.password"
+             required
+             minlength="8"
+             pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+      <ul class="text-danger list-unstyled" *ngIf="(submitted || password.dirty) && password.invalid">
+        <li *ngFor="let error of getValidationMessages(password)">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+
+
+<!-- Confirm Password -->
+
+
 <!--    Final Terms and Conditions-->
       <div class="form-group form-check">
         <input class="form-check-input"
