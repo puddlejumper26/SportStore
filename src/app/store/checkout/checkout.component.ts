@@ -4,7 +4,6 @@ import {Order} from 'src/app/model/order.model';
 import {NgForm} from '@angular/forms';
 
 @Component({
-  // templateUrl: 'checkout-reactive-form.component.html',
   templateUrl: 'checkout.component.html',
   styleUrls: ['checkout.component.css']
 })

@@ -1,6 +1,7 @@
 <!---->
 <!--Template driven form-->
 <!---->
+
 <div class="container-fluid">
     <div class="row">
       <div class="col bg-dark text-white">
@@ -136,7 +137,7 @@
                name="city"
                [(ngModel)]="order.city"
                required
-               pattern="^[A-Za-z\säüöß]+$"/>
+               pattern="^[A-Za-z\säüößÜÖÄ]+$"/>
         <ul class="text-danger list-unstyled" *ngIf="(submitted || city.dirty) && city.invalid">
           <li *ngFor="let error of getValidationMessages(city)">
             {{error}}
@@ -151,7 +152,7 @@
                name="state"
                [(ngModel)]="order.state"
                required
-               pattern="^[A-Za-z\säüöß]+$"/>
+               pattern="^[A-Za-z\säüößÜÖÄ]+$"/>
         <ul class="text-danger list-unstyled" *ngIf="(submitted || state.dirty) && state.invalid">
           <li *ngFor="let error of getValidationMessages(state)">
             {{error}}
@@ -167,7 +168,7 @@
                name="country"
                [(ngModel)]="order.country"
                required
-               pattern="^[A-Za-z]+$"/>
+               pattern="^[A-Za-z\sß]+$"/>
         <ul class="text-danger list-unstyled" *ngIf="(submitted || country.dirty) && country.invalid">
           <li *ngFor="let error of getValidationMessages(country)">
             {{error}}
