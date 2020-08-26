@@ -109,9 +109,9 @@
       </ul>
     </div>
 
-<!--zip code-->
-    <div class="form-row">
 
+    <div class="form-row">
+<!--zip code-->
       <div class="form-group col">
         <label>Zip/Postal Code</label>
         <input class="form-control"
@@ -128,7 +128,7 @@
           </li>
         </ul>
       </div>
-
+<!-- city -->
       <div class="form-group col-3">
         <label>City</label>
         <input class="form-control"
@@ -143,15 +143,21 @@
           </li>
         </ul>
       </div>
-
-<!--    <div class="form-group col-3">-->
-<!--      <label>State</label>-->
-<!--      <input class="form-control" #state="ngModel" name="state"-->
-<!--              [(ngModel)]="order.state" required />-->
-<!--      <span *ngIf="submitted && state.invalid" class="text-danger">-->
-<!--        Please enter your state-->
-<!--      </span>-->
-<!--    </div>-->
+<!-- State -->
+      <div class="form-group col-3">
+        <label>State</label>
+        <input class="form-control"
+               #state="ngModel"
+               name="state"
+               [(ngModel)]="order.state"
+               required
+               pattern="^[A-Za-z]+$"/>
+        <ul class="text-danger list-unstyled" *ngIf="(submitted || state.dirty) && state.invalid">
+          <li *ngFor="let error of getValidationMessages(state)">
+            {{error}}
+          </li>
+        </ul>
+      </div>
 
 
 
