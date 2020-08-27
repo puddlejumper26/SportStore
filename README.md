@@ -20,7 +20,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 ## 4.1 Form Validation
 
 #### 4.1.1 Template Form Validation
-- directly inside the template, here is [checkout.component.html](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.html)
+- limits and regulations directly inside the template, here is [checkout.component.html](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.html)
 - only the validation information, managed by the entire form, through `getFormValidationMessages()` and `getValidationMessages()` inside [checkout.component.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.ts)
 
 #### 4.1.2 Reactive Form Validation
