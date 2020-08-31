@@ -87,6 +87,7 @@ export class OrderFormGroup extends FormGroup {
         Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'),
       ])),
       confirmPassword: new OrderFormControl('Confirm Password', 'confirmPassword', '', Validators.required),
+      acceptTerms: new OrderFormControl('Accept Terms', 'acceptTerms', '', Validators.required)
     });
   }
 

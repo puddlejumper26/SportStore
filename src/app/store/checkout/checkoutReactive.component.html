@@ -184,6 +184,20 @@
 
   </div>
 
+  <!--    Final Terms and Conditions-->
+  <div class="form-group form-check">
+    <input class="form-check-input"
+           formControlName="acceptTerms"
+           type="checkbox"
+           name="acceptTerms"
+           [ngClass]="{ 'is-invalid':submitted &&  form.controls['acceptTerms'].invalid }">
+    <label class="form-check-label">Accept Terms & Conditions</label>
+    <ul class="text-danger list-unstyled" *ngIf="(submitted || form.controls['acceptTerms'].dirty ) && form.controls['acceptTerms'].invalid" >
+      <li *ngFor="let error of form.orderControls[11].getValidationMessages()">
+        {{error}}
+      </li>
+    </ul>
+  </div>
 
 
   <div class="text-center">
