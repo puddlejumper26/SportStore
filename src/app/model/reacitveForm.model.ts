@@ -57,7 +57,7 @@ export class OrderFormGroup extends FormGroup {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(10),
-        Validators.pattern('^\d*$'),
+        Validators.pattern('^[0-9]+$'),
       ])),
       city: new OrderFormControl('City', 'city', '', Validators.compose([
         Validators.required,
@@ -77,7 +77,16 @@ export class OrderFormGroup extends FormGroup {
         Validators.maxLength(10),
         Validators.pattern('^[A-Za-z\säüößÜÖÄ]+$'),
       ])),
-
+      email: new OrderFormControl('Email', 'email', '', Validators.compose([
+        Validators.required,
+        Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$'),
+      ])),
+      password: new OrderFormControl('Password', 'password', '', Validators.compose([
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'),
+      ])),
+      confirmPassword: new OrderFormControl('Confirm Password', 'confirmPassword', '', Validators.required),
     });
   }
 

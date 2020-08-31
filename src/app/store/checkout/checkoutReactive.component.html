@@ -49,7 +49,7 @@
       </select>
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['title'].dirty) && form.controls['title'].invalid">
-        <li *ngFor="let error of form.orderControls['title'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[0].getValidationMessages()">
           {{error}}
         </li>
       </ul>
@@ -62,7 +62,7 @@
              formControlName="firstName">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['firstName'].dirty) && form.controls['firstName'].invalid">
-        <li *ngFor="let error of form.orderControls['firstName'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[1].getValidationMessages()">
           {{error}}
         </li>
       </ul>
@@ -75,7 +75,7 @@
              formControlName="lastName">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['lastName'].dirty) && form.controls['lastName'].invalid">
-        <li *ngFor="let error of form.orderControls['lastName'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[2].getValidationMessages()">
           {{error}}
         </li>
       </ul>
@@ -90,54 +90,54 @@
            formControlName="address">
     <ul class="text-danger list-unstyled"
         *ngIf="(submitted || form.controls['address'].dirty) && form.controls['address'].invalid">
-      <li *ngFor="let error of form.orderControls['address'].getValidationMessages()">
+      <li *ngFor="let error of form.orderControls[3].getValidationMessages()">
         {{error}}
       </li>
     </ul>
   </div>
 
   <div class="form-row">
-  <!--Zip Code-->
+    <!--Zip Code-->
     <div class="form-group col-2">
       <label>Zip Code</label>
       <input class="form-control" name="zip" formControlName="zip">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['zip'].dirty) && form.controls['zip'].invalid">
-        <li *ngFor="let error of form.orderControls['zip'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[4].getValidationMessages()">
           {{error}}
         </li>
       </ul>
     </div>
 
-  <!--city-->
+    <!--city-->
     <div class="form-group col-2">
       <label>City</label>
       <input class="form-control" name="city" formControlName="city">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['city'].dirty) && form.controls['city'].invalid">
-        <li *ngFor="let error of form.orderControls['city'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[5].getValidationMessages()">
           {{error}}
         </li>
       </ul>
     </div>
-  <!-- state-->
+    <!-- state-->
     <div class="form-group col-2">
       <label>State</label>
       <input class="form-control" name="state" formControlName="state">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['state'].dirty) && form.controls['state'].invalid">
-        <li *ngFor="let error of form.orderControls['state'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[6].getValidationMessages()">
           {{error}}
         </li>
       </ul>
     </div>
-  <!--country-->
+    <!--country-->
     <div class="form-group col-2">
       <label>Country</label>
       <input class="form-control" name="country" formControlName="country">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['country'].dirty) && form.controls['country'].invalid">
-        <li *ngFor="let error of form.orderControls['country'].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[7].getValidationMessages()">
           {{error}}
         </li>
       </ul>
@@ -145,6 +145,44 @@
 
   </div>
 
+  <!--Email-->
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" name="email" formControlName="email">
+    <ul class="text-danger list-unstyled"
+        *ngIf="(submitted || form.controls['email'].dirty) && form.controls['email'].invalid">
+      <li *ngFor="let error of form.orderControls[8].getValidationMessages()">
+        {{error}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-row">
+    <!--password-->
+    <div class="form-group  col-5">
+      <label>Password</label>
+      <input class="form-control" name="password" formControlName="password">
+      <ul class="text-danger list-unstyled"
+          *ngIf="(submitted || form.controls['password'].dirty) && form.controls['password'].invalid">
+        <li *ngFor="let error of form.orderControls[9].getValidationMessages()">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+
+    <!--  Confirm password-->
+    <div class="form-group col-5">
+      <label>Confirm Password</label>
+      <input class="form-control" name="confirmPassword" formControlName="confirmPassword">
+      <ul class="text-danger list-unstyled"
+          *ngIf="(submitted || form.controls['confirmPassword'].dirty) && form.controls['confirmPassword'].invalid">
+        <li *ngIf="form.controls['password'].value !== form.controls['confirmPassword'].value">
+          Password must match
+        </li>
+      </ul>
+    </div>
+
+  </div>
 
 
 
