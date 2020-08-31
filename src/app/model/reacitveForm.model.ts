@@ -2,7 +2,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 // Here is to set the limits conditions
-export class InputFormControl extends FormControl {
+export class OrderFormControl extends FormControl {
   label: string;
   modelProperty: string;
 
@@ -25,7 +25,12 @@ export class InputFormControl extends FormControl {
                             ${this.errors['minlength'].requiredLength}
                             characters`);
             break;
-          case `pattern`:
+          case 'maxlength':
+            messages.push(`A ${this.label} must be no more than
+                            ${this.errors['maxlength'].requiredLength}
+                            characters`);
+            break;
+          case 'pattern':
             messages.push(`The ${this.label} contains
                              illegal characters`);
             break;
@@ -37,16 +42,53 @@ export class InputFormControl extends FormControl {
 }
 
 // Here is to put the limits for each input content
-export class InputFormGroup extends FormGroup {
+export class OrderFormGroup extends FormGroup {
   constructor() {
     super({
-      title: new InputFormControl('Title', 'title', '', Validators.required),
-      firstName: new InputFormControl('First Name', 'firstName', '', Validators.required),
+      title: new OrderFormControl('Title', 'title', '', Validators.required),
+      firstName: new OrderFormControl('First Name', 'firstName', '', Validators.required),
+      lastName: new OrderFormControl('Last Name', 'lastName', '', Validators.required),
+      address: new OrderFormControl('Address', 'address', '', Validators.compose([
+        Validators.required,
+        Validators.maxLength(30),
+        Validators.pattern('^[a-zA-Z0-9\s,\'-.]*$'),
+      ])),
+      zip: new OrderFormControl('Zip Code', 'zip', '', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(10),
+        Validators.pattern('^\d*$'),
+      ])),
+      city: new OrderFormControl('City', 'city', '', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(10),
+        Validators.pattern('^[A-Za-z\säüößÜÖÄ]+$'),
+      ])),
+      state: new OrderFormControl('State', 'state', '', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(10),
+        Validators.pattern('^[A-Za-z\säüößÜÖÄ]+$'),
+      ])),
+      country: new OrderFormControl('Country', 'country', '', Validators.compose([
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(10),
+        Validators.pattern('^[A-Za-z\säüößÜÖÄ]+$'),
+      ])),
 
     });
   }
 
-  get inputControls(): InputFormControl[] {
-    return Object.keys(this.controls).map(k => this.controls[k] as InputFormControl);
+  get orderControls(): OrderFormControl[] {
+    return Object.keys(this.controls).map(k => this.controls[k] as OrderFormControl);
+  }
+
+  getFormValidationMessages(form: any): string[] {
+    let messages: string[] = [];
+    this.orderControls.forEach(c => c.getValidationMessages()
+      .forEach(m => messages.push(m)));
+    return messages;
   }
 }

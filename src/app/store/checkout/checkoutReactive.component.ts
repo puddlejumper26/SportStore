@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {OrderRepository} from '../../model/order.repository';
 import {Order} from '../../model/order.model';
-import {NgForm} from '@angular/forms';
-import {InputFormGroup} from '../../model/reacitveForm.model';
+import {OrderFormGroup} from '../../model/reacitveForm.model';
 
 @Component({
   templateUrl: 'checkoutReactive.component.html',
@@ -12,14 +11,13 @@ export class CheckoutReactiveComponent {
   orderSent: boolean = false;
   submitted: boolean = false;
   date: string = '';
-  form: InputFormGroup = new InputFormGroup()
+  form: OrderFormGroup = new OrderFormGroup();
   newOrder: Order;
 
   constructor(public repository: OrderRepository, public order: Order) {
   }
 
-  submitOrder(form: NgForm){
-    this.form.inputControls.forEach(c => this.newOrder[c.modelProperty] = c.value);
+  submitOrder(form: any){
     this.submitted = true;
     if (form.valid) {
       this.repository.saveOrder(this.order).subscribe(order => {
