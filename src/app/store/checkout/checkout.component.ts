@@ -13,8 +13,10 @@ export class CheckoutComponent implements OnInit {
   // ***********
   orderSent: boolean = false;
   submitted: boolean = false;
+  date: string = '';
 
   constructor(public repository: OrderRepository, public order: Order) {
+    this.date = new Date().toISOString().slice(0, 16);
   }
 
   ngOnInit(): void {
@@ -50,6 +52,8 @@ export class CheckoutComponent implements OnInit {
         }
       }
     }
+
+
     return messages;
   }
 
@@ -62,20 +66,3 @@ export class CheckoutComponent implements OnInit {
   }
 
 }
-
-// ***********
-// reactive form
-// ***********
-
-// validateForm: FormGroup;
-// orderSent: boolean = false;
-// submitted: boolean = false;
-//
-// constructor(private fb: FormBuilder) {
-// }
-//
-// ngOnInit(): void{
-//   this.validateForm = this.fb.group({
-//
-//   })
-// }

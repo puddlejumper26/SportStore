@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreComponent } from './store/store.component';
 import { StoreFirstGuard } from './storeFirst.guard';
+import {CheckoutReactiveComponent} from './store/checkout/checkoutReactive.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,11 @@ const routes: Routes = [
     path: 'checkout',
     component: CheckoutComponent,
     canActivate: [StoreFirstGuard],
+  },
+  {
+    path: 'checkoutReactive',
+    component: CheckoutReactiveComponent,
+    canActivate:[StoreFirstGuard],
   },
   { path: '**', redirectTo: '/store' },
 ];

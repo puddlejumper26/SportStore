@@ -2,6 +2,9 @@
 <!--Template driven form-->
 <!---->
 
+
+<!--Password 的验证和正常一样-->
+
 <div class="container-fluid">
     <div class="row">
       <div class="col bg-dark text-white">
@@ -197,6 +200,7 @@
 
 
 <!-- Password -->
+<!--    注意这里的pattern 同时验证了 至少要8个字符-->
     <div class="form-group">
       <label>Password</label>
       <input class="form-control"
@@ -212,8 +216,11 @@
         </li>
       </ul>
     </div>
-    
+
 <!-- Confirm Password -->
+<!-- 可以简单地通过 *ngIf 来进行value和 password.value是否相同，但是不知道如何能够把这个判断放到 ts 文件中-->
+<!-- 关键问题是 不清楚  errors 这个 元素的 属性有哪些，目前知道 有 required, minlength, maxlength, pattern-->
+<!--    这些都是可以在 input 的 attribute 中找到的-->
     <div class="form-group">
       <label>Confirm Password</label>
       <input class="form-control"
@@ -222,13 +229,31 @@
              [(ngModel)]="order.confirmPassword"
              required
              minlength="8"
-             pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+             pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+             mustMatch>
       <ul class="text-danger list-unstyled" *ngIf="(submitted || confirmPassword.dirty) || confirmPassword.invalid">
         <li *ngIf="password.value !== confirmPassword.value">
           Password must match
         </li>
       </ul>
+<!--      <ul class="text-danger list-unstyled" *ngIf="(submitted || confirmPassword.dirty) && confirmPassword.invalid">-->
+<!--        <li *ngFor="let error of getValidationMessages(confirmPassword)">-->
+<!--          {{error}}-->
+<!--        </li>-->
+<!--      </ul>-->
     </div>
+
+
+<!-- URL-->
+
+
+
+<!--Date-->
+<!--    https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input/datetime-local  -->
+    <input type="datetime-local" [value]="date"
+           (change)="date=$event.target.value" /> {{date}}
+
+
 
 <!--    Final Terms and Conditions-->
       <div class="form-group form-check">
@@ -247,7 +272,7 @@
         </ul>
       </div>
 
-
+<!-- Back button and Submitting Button -->
     <div class="text-center">
       <button class="btn btn-secondary m-1" routerLink="/cart">Back</button>
       <button class="btn btn-primary m-1" type="submit"
