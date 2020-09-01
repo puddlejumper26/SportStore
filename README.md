@@ -26,7 +26,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### 4.1.2 Reactive Form Validation
 - in order to clarify the functions of reactive form, so I created a seperated button navigated to this reactive form, but the content is the same, only the form and validations are differnet
 - here are the template and ts file [`checkoutReactive.component.html`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkoutReactive.component.html) , [`checkoutReactive.component.ts` ](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkoutReactive.component.ts)
-- [`reacitveForm.model.ts `](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/reacitveForm.model.ts) - this has all the limitations inside, and will be used inside the **checkoutReactive.component.ts** and **checkoutReactive.component.html**
+- [`reacitveForm.model.ts `](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/reacitveForm.model.ts) - this has all the limitations inside, basically the above two methods inside **checkout.component.ts** are moved to here, and will be used inside the **checkoutReactive.component.ts** and **checkoutReactive.component.html**
 - [`limit.formvalidator.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/limit.formvalidator.ts) - this has self-defined limitations, only needs to be imported to **reacitveForm.model.ts**.
 
 ## 4.2 Service
