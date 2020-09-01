@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ModelModule } from '../model/model.module';
 import { StoreComponent } from './store.component';
-import { CounterDirective } from '../model/counter.directive';
+import { CounterDirective } from '../model/directives/counter.directive';
 import { cartSummaryComponent } from './cart/cartSummary.component';
 import {CheckoutReactiveComponent} from './checkout/checkoutReactive.component';
 

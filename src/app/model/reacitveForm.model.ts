@@ -1,5 +1,5 @@
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LimitMaxValidator, LimitMinValidator, MatchPasswordValidator, TermsValidator} from './limit.formvalidator';
+import {LimitMaxValidator, LimitMinValidator, MatchPasswordValidator, TermsValidator} from './validators/limit.formvalidator';
 
 
 // Here is to set the limits conditions
