@@ -20,15 +20,14 @@ This project is trying to realize most of the functions of Angular : )  Check po
 ## 4.1 Form Validation
 
 #### 4.1.1 Template Form Validation
-- limits and regulations directly inside the template, here is [checkout.component.html](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.html)
+- limits and regulations directly inside the template, here is [`checkout.component.html`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.html)
 - only the validation information, managed by the entire form, through `getFormValidationMessages()` and `getValidationMessages()` inside [checkout.component.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.ts)
 
 #### 4.1.2 Reactive Form Validation
 - in order to clarify the functions of reactive form, so I created a seperated button navigated to this reactive form, but the content is the same, only the form and validations are differnet
 - here are the template and ts file [`checkoutReactive.component.html`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkoutReactive.component.html) , [`checkoutReactive.component.ts` ](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkoutReactive.component.ts)
-- [`reacitveForm.model.ts `](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/reacitveForm.model.ts)
-  
-- [`limit.formvalidator.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/limit.formvalidator.ts)
+- [`reacitveForm.model.ts `](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/reacitveForm.model.ts) - this has all the limitations inside, and will be used inside the **checkoutReactive.component.ts** and **checkoutReactive.component.html**
+- [`limit.formvalidator.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/limit.formvalidator.ts) - this has self-defined limitations, only needs to be imported to **reacitveForm.model.ts**.
 
 ## 4.2 Service
 
