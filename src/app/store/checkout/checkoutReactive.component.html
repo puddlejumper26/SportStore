@@ -171,7 +171,7 @@
     <!--password-->
     <div class="form-group  col-5">
       <label>Password</label>
-      <input class="form-control" name="password" formControlName="password">
+      <input class="form-control" id="password" name="password" formControlName="password">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['password'].dirty) && form.controls['password'].invalid">
         <li *ngFor="let error of form.orderControls[10].getValidationMessages()">

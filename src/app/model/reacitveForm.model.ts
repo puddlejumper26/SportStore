@@ -1,5 +1,5 @@
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LimitMaxValidator} from './limit.formvalidator';
+import {LimitMaxValidator, LimitMinValidator, MatchPasswordValidator, TermsValidator} from './limit.formvalidator';
 
 
 // Here is to set the limits conditions
@@ -34,8 +34,17 @@ export class OrderFormControl extends FormControl {
           case 'pattern':
             messages.push(`The ${this.label} contains illegal characters`);
             break;
+          case 'pdNotMatched':
+            messages.push(`The ${this.label} must be matched`);
+            break;
           case'maxLimit':
-            messages.push(`The ${this.label} cannot be larger than ${this.errors['maxLimit'].limit}`);
+            messages.push(`The ${this.label} cannot be larger than ${this.errors['maxLimit'].maxLimit}`);
+            break;
+          case'minLimit':
+            messages.push(`The ${this.label} cannot be smaller than ${this.errors['minLimit'].minLimit}`);
+            break;
+          case'termsValidator':
+            messages.push(`The ${this.label} must be agreed`);
             break;
         }
       }
@@ -83,6 +92,7 @@ export class OrderFormGroup extends FormGroup {
       price: new OrderFormControl('Price', 'price', '', Validators.compose([
         Validators.required,
         LimitMaxValidator.Limit(500),
+        LimitMinValidator.Limit(10),
         Validators.pattern('^[0-9]+$'),
       ])),
       email: new OrderFormControl('Email', 'email', '', Validators.compose([
@@ -95,7 +105,7 @@ export class OrderFormGroup extends FormGroup {
         Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'),
       ])),
       confirmPassword: new OrderFormControl('Confirm Password', 'confirmPassword', '', Validators.required),
-      acceptTerms: new OrderFormControl('Accept Terms', 'acceptTerms', '', Validators.required)
+      acceptTerms: new OrderFormControl('Accept Terms', 'acceptTerms', '', TermsValidator.Accepted())
     });
   }
 
