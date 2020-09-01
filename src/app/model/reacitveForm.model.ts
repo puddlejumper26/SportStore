@@ -1,4 +1,5 @@
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {LimitMaxValidator} from './limit.formvalidator';
 
 
 // Here is to set the limits conditions
@@ -18,7 +19,7 @@ export class OrderFormControl extends FormControl {
       for (let errorName in this.errors) {
         switch (errorName) {
           case 'required':
-            messages.push(`You must enter a ${this.label}`);
+            messages.push(`${this.label} is required`);
             break;
           case 'minlength':
             messages.push(`A ${this.label} must be at least
@@ -31,8 +32,10 @@ export class OrderFormControl extends FormControl {
                             characters`);
             break;
           case 'pattern':
-            messages.push(`The ${this.label} contains
-                             illegal characters`);
+            messages.push(`The ${this.label} contains illegal characters`);
+            break;
+          case'maxLimit':
+            messages.push(`The ${this.label} cannot be larger than ${this.errors['maxLimit'].limit}`);
             break;
         }
       }
@@ -76,6 +79,11 @@ export class OrderFormGroup extends FormGroup {
         Validators.minLength(3),
         Validators.maxLength(10),
         Validators.pattern('^[A-Za-z\säüößÜÖÄ]+$'),
+      ])),
+      price: new OrderFormControl('Price', 'price', '', Validators.compose([
+        Validators.required,
+        LimitMaxValidator.Limit(500),
+        Validators.pattern('^[0-9]+$'),
       ])),
       email: new OrderFormControl('Email', 'email', '', Validators.compose([
         Validators.required,

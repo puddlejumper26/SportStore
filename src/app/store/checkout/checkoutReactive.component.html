@@ -143,6 +143,16 @@
       </ul>
     </div>
 
+    <div class="form-group col-2">
+      <label>Price</label>
+      <input class="form-control" name="price" formControlName="price">
+      <ul class="text-danger list-unstyled"
+          *ngIf="(submitted || form.controls['price'].dirty) && form.controls['price'].invalid">
+        <li *ngFor="let error of form.orderControls[8].getValidationMessages()">
+          {{error}}
+        </li>
+      </ul>
+    </div>
   </div>
 
   <!--Email-->
@@ -151,7 +161,7 @@
     <input class="form-control" name="email" formControlName="email">
     <ul class="text-danger list-unstyled"
         *ngIf="(submitted || form.controls['email'].dirty) && form.controls['email'].invalid">
-      <li *ngFor="let error of form.orderControls[8].getValidationMessages()">
+      <li *ngFor="let error of form.orderControls[9].getValidationMessages()">
         {{error}}
       </li>
     </ul>
@@ -164,7 +174,7 @@
       <input class="form-control" name="password" formControlName="password">
       <ul class="text-danger list-unstyled"
           *ngIf="(submitted || form.controls['password'].dirty) && form.controls['password'].invalid">
-        <li *ngFor="let error of form.orderControls[9].getValidationMessages()">
+        <li *ngFor="let error of form.orderControls[10].getValidationMessages()">
           {{error}}
         </li>
       </ul>
@@ -193,7 +203,7 @@
            [ngClass]="{ 'is-invalid':submitted &&  form.controls['acceptTerms'].invalid }">
     <label class="form-check-label">Accept Terms & Conditions</label>
     <ul class="text-danger list-unstyled" *ngIf="(submitted || form.controls['acceptTerms'].dirty ) && form.controls['acceptTerms'].invalid" >
-      <li *ngFor="let error of form.orderControls[11].getValidationMessages()">
+      <li *ngFor="let error of form.orderControls[12].getValidationMessages()">
         {{error}}
       </li>
     </ul>
