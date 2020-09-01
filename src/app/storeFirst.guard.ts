@@ -18,3 +18,35 @@ export class StoreFirstGuard{
         return true;
     }
 }
+
+// then it needs to be applied into the routing files
+// const routes: Routes = [
+//   {
+//     path: 'store',
+//     component: StoreComponent,
+//     canActivate: [StoreFirstGuard],    <================
+//   },
+//   {
+//     path: 'cart',
+//     component: cartDetailComponent,
+//     canActivate: [StoreFirstGuard],       <================
+//   },
+//   {
+//     path: 'checkout',
+//     component: CheckoutComponent,
+//     canActivate: [StoreFirstGuard],           <================
+//   },
+//   {
+//     path: 'checkoutReactive',
+//     component: CheckoutReactiveComponent,
+//     canActivate:[StoreFirstGuard],          <================
+//   },
+//   { path: '**', redirectTo: '/store' },
+// ];
+
+// @NgModule({
+//   imports: [RouterModule.forRoot(routes)],
+//   exports: [RouterModule],
+//   providers: [StoreFirstGuard],                     <================
+// })
+// export class AppRoutingModule {}
