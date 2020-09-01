@@ -24,6 +24,8 @@ This project is trying to realize most of the functions of Angular : )  Check po
 - only the validation information, managed by the entire form, through `getFormValidationMessages()` and `getValidationMessages()` inside [checkout.component.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkout.component.ts)
 
 #### 4.1.2 Reactive Form Validation
+- in order to clarify the functions of reactive form, so I created a seperated button navigated to this reactive form, but the content is the same, only the form and validations are differnet
+- here are the template and ts file [checkoutReactive.component.html](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkoutReactive.component.html) , [checkoutReactive.component.ts ](https://github.com/puddlejumper26/SportStore/blob/master/src/app/store/checkout/checkoutReactive.component.ts)
 - put all the limits inside a ts file
 
 ## 4.2 Service
