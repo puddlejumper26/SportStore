@@ -1,9 +1,9 @@
-import { CheckoutComponent } from './store/checkout/checkout.component';
-import { cartDetailComponent } from './store/cart/cartDetail.component';
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { StoreComponent } from './store/store.component';
-import { StoreFirstGuard } from './storeFirst.guard';
+import {CheckoutComponent} from './store/checkout/checkout.component';
+import {cartDetailComponent} from './store/cart/cartDetail.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {StoreComponent} from './store/store.component';
+import {StoreFirstGuard} from './storeFirst.guard';
 import {CheckoutReactiveComponent} from './store/checkout/checkoutReactive.component';
 
 const routes: Routes = [
@@ -25,9 +25,14 @@ const routes: Routes = [
   {
     path: 'checkoutReactive',
     component: CheckoutReactiveComponent,
-    canActivate:[StoreFirstGuard],
+    canActivate: [StoreFirstGuard],
   },
-  { path: '**', redirectTo: '/store' },
+  {
+    path: 'admin',
+    loadChildren: './admin/admin.module#AdminModule',
+    canActivate: [StoreFirstGuard]
+  },
+  {path: '**', redirectTo: '/store'},
 ];
 
 @NgModule({
@@ -35,4 +40,5 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [StoreFirstGuard],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
