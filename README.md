@@ -8,6 +8,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 - [LINK](https://puddlejumper26.github.io/SportStore/)
 - But I am working on it everyday, almost!
+- This is updated only with StaticDataSouce, cause the Jason Server only works locally.
 
 # 3.0 Tech Stack & IDE
 - Angular 9, TypeScript, Git, Bootstrap(4.1.1), HTML5
