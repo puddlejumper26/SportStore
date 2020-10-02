@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: './admin/admin.module#AdminModule',
+    loadChildren: () => import('src/app/admin/admin.module').then(m => m.AdminModule),
     canActivate: [StoreFirstGuard]
   },
   {path: '**', redirectTo: '/store'},
