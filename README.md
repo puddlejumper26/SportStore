@@ -6,7 +6,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 # 2.0 Demo (In Progress)
 
-- [LINK](https://puddlejumper26.github.io/SportStore/)
+- [LINK](https://puddlejumper26.github.io/SportStore/) --> [click here to see the Gif demo for all functions]()
 - But I am working on it everyday, almost!
 - This is updated only with StaticDataSouce, cause the Jason Server only works locally.
 
@@ -74,8 +74,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### [storeFirst.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/storeFirst.guard.ts)
 - `canActivate`. When customer on pages other than '/store', e.g. '/cart', and refresh the page, then will automatically redirect to '/store'.
 
-####[auth.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/)
-
+#### [auth.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/)
 
 
 ## 4.5 Authentication
@@ -86,7 +85,6 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### [auth.component.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.component.ts)
 - provides a method `authenticate` which use the methods inside `auth.service.ts` to show whether Authentication Failed, or For Data Invalid or navigate to the correct path
 #### [auth.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.guard.ts)
--
 
 
 ## 4.6 Restful web
@@ -110,3 +108,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 4.8 Http Interceptor
 - Angular 开发实战 p65
+
+## 5.0 Gif shows functions
+
+
