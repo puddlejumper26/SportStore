@@ -40,9 +40,15 @@ This project is trying to realize most of the functions of Angular : )  Check po
 - `getProductor`,`getProducts`,`saveProduct`,`updateProduct`,`deleteProduct`,`saveOrder`,`getOrders`,`deleteOrder`,`updateOrder`
 - includes `authenticate` function, is `observable`, sends back whether response success or not
 #### [product.repository.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/product.repository.ts)
-- provide all the potential functions and methods of product
+- provides all the potential functions and methods of product
+- 
 #### [cart.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/cart.model.ts)
-- provide all the potential functions and methods of Cart
+- provides all the potential functions and methods of Cart
+
+#### [order.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/order.model.ts)
+- provides interface of Order
+#### [product.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/product.model.ts)
+- provides interface of Product
 
 ## 4.3 Directive
 
