@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import { Observable } from 'rxjs';
-import { RestDatasource } from '../rest.datasource';
+import { RestDataSource } from '../rest.datasource';
 
 @Injectable()
 export class AuthService{
-    constructor(private datasource: RestDatasource){}
+    constructor(private datasource: RestDataSource){}
 
     authenticate(username: string, password: string):Observable<boolean>{
         return this.datasource.authenticate(username,password);

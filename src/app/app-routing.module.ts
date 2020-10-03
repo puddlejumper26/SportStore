@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {StoreComponent} from './store/store.component';
 import {StoreFirstGuard} from './storeFirst.guard';
 import {CheckoutReactiveComponent} from './store/checkout/checkoutReactive.component';
+import { AdminModule } from './admin/admin.module';
 
 const routes: Routes = [
   {

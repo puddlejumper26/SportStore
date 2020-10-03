@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from './store/store.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     AppRoutingModule,
+    AdminModule,
     BrowserModule,
     StoreModule,
     FormsModule,

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from './order.model';
-import { RestDatasource } from './rest.datasource';
+import { RestDataSource } from './rest.datasource';
 import { StaticDataSource } from './static.datasource';
 
 @Injectable()
@@ -9,7 +9,7 @@ export class OrderRepository{
     private orders: Order[] = [];
     private loaded: boolean = false;
 
-    constructor(private dataSource: RestDatasource){}
+    constructor(private dataSource: RestDataSource){}
 
     loadOrders(){
         this.loaded = true;
@@ -18,7 +18,7 @@ export class OrderRepository{
 
     getOrders(): Order[]{
         if(!this.loaded){
-            this.loadOrders
+            this.loadOrders();
         }
         return this.orders;
     }

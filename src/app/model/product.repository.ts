@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
-import { RestDatasource } from './rest.datasource';
+import { RestDataSource } from './rest.datasource';
 import { StaticDataSource } from './static.datasource';
 
 @Injectable()
@@ -8,7 +8,7 @@ export class ProductRepository {
   private products: Product[] = [];
   private categories: string[] = [];
 
-  constructor(private dataSource: RestDatasource) {
+  constructor(private dataSource: RestDataSource) {
     dataSource.getProducts().subscribe((data) => {
       this.products = data;
       this.categories = data
@@ -30,7 +30,7 @@ export class ProductRepository {
   }
 
   getProduct(id: number): Product {
-    return this.products.find((p) => p.id === id);
+    return this.products.find((p) => p.id == id);
   }
 
   getCategories(): string[] {
@@ -41,7 +41,7 @@ export class ProductRepository {
   }
 
   saveProduct(product: Product) {
-    if (product.id === null || product.id === 0) {
+    if (product.id == null || product.id == 0) {
       this.dataSource.saveProduct(product).subscribe(p => this.products.push(p));
     } else {
       this.dataSource.updateProduct(product).subscribe(p => { 
