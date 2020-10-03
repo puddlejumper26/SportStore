@@ -50,8 +50,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 *-----------*
 #### [order.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/order.model.ts)
 - provides interface of Order
-#### [product.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/product.model.ts)
-- provides interface of Product
+
 
 *-----------*
 #### [auth.service.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/auth.service.ts)
@@ -111,4 +110,6 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 5.0 Gif shows functions
 
+This app has been push to the Github Pages, but due to the Json Server could only run locally, therefore complete functions related to the rest data could not be seen on the Github Pages.
 
+Therefore this part is to display all the functions when using rest data.
