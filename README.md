@@ -6,7 +6,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 # 2.0 Demo (In Progress)
 
-- [LINK](https://puddlejumper26.github.io/SportStore/) --> [click here to see the Gif demo for all functions]()
+- [LINK](https://puddlejumper26.github.io/SportStore/) --> [click here to see the Gif demo for all functions](https://github.com/puddlejumper26/SportStore/#50-gif-shows-functions)
 - But I am working on it everyday, almost!
 - This is updated only with StaticDataSouce, cause the Jason Server only works locally.
 
