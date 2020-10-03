@@ -34,6 +34,11 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 #### [static.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/static.datasource.ts)
 - provide the mock static datasource for the app, it is used at the beginning for buidling the app, afterwards it is replaced by the RESTFUL Web service
+#### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
+- to replace with static.datasource.ts, in order to interact with mock server
+- includes all the functions related to the `http`, are all `observable` |
+- `getProductor`,`getProducts`,`saveProduct`,`updateProduct`,`deleteProduct`,`saveOrder`,`getOrders`,`deleteOrder`,`updateOrder`
+- includes `authenticate` function, is `observable`, sends back whether response success or not
 #### [product.repository.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/product.repository.ts)
 - provide all the potential functions and methods of product
 #### [cart.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/cart.model.ts)
