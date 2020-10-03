@@ -56,6 +56,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 *-----------*
 #### [auth.service.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/auth.service.ts)
 - provies authentication token to the admin login 
+- includes one function `authenticate` which uses method inside [`rest.datasource.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts), implement is inside [`auth.component.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.component.ts), therefore actually [`auth.component.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.component.ts) could use method `authenticate` directly from [`rest.datasource.ts`](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
 
 ## 4.3 Directive
 
@@ -72,6 +73,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 #### [storeFirst.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/storeFirst.guard.ts)
 - `canActivate`. When customer on pages other than '/store', e.g. '/cart', and refresh the page, then will automatically redirect to '/store'.
+
 ####[auth.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/)
 
 
@@ -80,9 +82,9 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### [auth.service.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/auth.service.ts)
 - provies authentication token to the admin login 
 #### [auth.component.html](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.component.html)
-- provides the login template, for admin Name and Password, these are defined inside `[authMiddleware.js](https://github.com/puddlejumper26/SportStore/blob/master/authMiddleware.js)`
+- provides the login template, for admin Name and Password, these are defined inside [`authMiddleware.js`](https://github.com/puddlejumper26/SportStore/blob/master/authMiddleware.js)
 #### [auth.component.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.component.ts)
--
+- provides a method `authenticate` which use the methods inside `auth.service.ts` to show whether Authentication Failed, or For Data Invalid or navigate to the correct path
 #### [auth.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.guard.ts)
 -
 
@@ -91,6 +93,10 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 #### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
 - this is to replace the local StaticDataSource, in order to enable the futher interaction between the data source `data.js` and user interface
+- to replace with static.datasource.ts, in order to interact with mock server
+- includes all the functions related to the `http`, are all `observable` |
+- `getProductor`,`getProducts`,`saveProduct`,`updateProduct`,`deleteProduct`,`saveOrder`,`getOrders`,`deleteOrder`,`updateOrder`
+- includes `authenticate` function, is `observable`, sends back whether response success or not
 
 ## 4.7 Testing
 
