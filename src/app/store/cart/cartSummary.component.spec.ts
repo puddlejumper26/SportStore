@@ -1,7 +1,7 @@
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import { cartSummaryComponent } from './cartSummary.component';
 import {DebugElement} from '@angular/core';
-import { Cart } from '../../model/cart.model';
+import { Cart } from '../../model/services/cart.model';
 import {By} from '@angular/platform-browser';
 
 describe('cartSummaryComponent', () => {

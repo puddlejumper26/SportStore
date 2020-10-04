@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../model/product.model';
-import { ProductRepository } from '../model/product.repository';
+import { ProductRepository } from '../model/services/product.repository';
 
 @Component({
     templateUrl: "productEditor.component.html"

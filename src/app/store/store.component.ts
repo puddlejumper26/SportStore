@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../model/product.model';
-import { ProductRepository } from '../model/product.repository';
-import { Cart } from '../model/cart.model';
+import { ProductRepository } from '../model/services/product.repository';
+import { Cart } from '../model/services/cart.model';
 import { Router } from '@angular/router';
 
 @Component({

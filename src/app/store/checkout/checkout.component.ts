@@ -1,4 +1,4 @@
-import {OrderRepository} from './../../model/order.repository';
+import {OrderRepository} from '../../model/services/order.repository';
 import {Component, OnInit} from '@angular/core';
 import {Order} from 'src/app/model/order.model';
 import {NgForm} from '@angular/forms';

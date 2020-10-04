@@ -1,6 +1,6 @@
 import {TestBed, async, ComponentFixture} from '@angular/core/testing';
 import {DebugElement} from '@angular/core';
-import {Cart, CartLine} from '../../model/cart.model';
+import {Cart, CartLine} from '../../model/services/cart.model';
 import {By} from '@angular/platform-browser';
 import {cartDetailComponent} from './cartDetail.component';
 import {Product} from '../../model/product.model';

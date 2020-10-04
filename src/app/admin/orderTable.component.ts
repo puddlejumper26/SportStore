@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Order } from "../model/order.model";
-import { OrderRepository } from "../model/order.repository";
+import { OrderRepository } from "../model/services/order.repository";
 
 @Component({
     templateUrl: "orderTable.component.html"

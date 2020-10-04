@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {OrderRepository} from '../../model/order.repository';
+import {OrderRepository} from '../../model/services/order.repository';
 import {Order} from '../../model/order.model';
 import {OrderFormGroup} from '../../model/reacitveForm.model';
 
