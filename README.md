@@ -113,3 +113,5 @@ This project is trying to realize most of the functions of Angular : )  Check po
 This app has been push to the Github Pages, but due to the Json Server could only run locally, therefore complete functions related to the rest data could not be seen on the Github Pages.
 
 Therefore this part is to display all the functions when using rest data.
+
+![20201004_015859](https://user-images.githubusercontent.com/40550117/95003966-86abfc80-05e5-11eb-8741-58ca7c7d4737.gif)
