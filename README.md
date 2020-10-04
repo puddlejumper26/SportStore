@@ -84,7 +84,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 #### [auth.component.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.component.ts)
 - provides a method `authenticate` which use the methods inside `auth.service.ts` to show whether Authentication Failed, or For Data Invalid or navigate to the correct path
 #### [auth.guard.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/admin/auth.guard.ts)
-
+- prevents 
 
 ## 4.6 Restful web
 
