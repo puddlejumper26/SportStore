@@ -4,7 +4,7 @@
 
 This project is trying to realize most of the functions of Angular : )  Check point 4.0 [Click here](https://github.com/puddlejumper26/SportStore/blob/master/README.md#40-skills--functions-implemented)
 
-## 1.1 How to use this app
+## 1.1 How to use this app :flags:
 
 - download to local or clone
 - run npm install to install all dependencies
