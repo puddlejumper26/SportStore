@@ -7,7 +7,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 ## 1.1 How to use this app :flags:
 
 - download to local or clone
-- run npm install to install all dependencies
+- run `npm install` to install all dependencies
 - first need to run ` npm run json` to inititate the Json Server, after successful, open `localhost: 3500` should see the data
 - second run ` ng serve` to start the App, after successful, open ` localhost:4200` should see the Interface of the app
 - Admin Login `Name - Admin`, and `Password - secret`
