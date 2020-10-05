@@ -40,23 +40,23 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 4.2 Service
 
-#### [static.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/static.datasource.ts)
+#### [static.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/static.datasource.ts)
 - provide the mock static datasource for the app, it is used at the beginning for buidling the app, afterwards it is replaced by the RESTFUL Web service
-#### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
+#### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/rest.datasource.ts)
 - to replace with static.datasource.ts, in order to interact with mock server
 - includes all the functions related to the `http`, are all `observable` |
 - `getProductor`,`getProducts`,`saveProduct`,`updateProduct`,`deleteProduct`,`saveOrder`,`getOrders`,`deleteOrder`,`updateOrder`
 - includes `authenticate` function, is `observable`, sends back whether response success or not
 
 *-----------*
-#### [product.repository.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/product.repository.ts)
+#### [product.repository.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/product.repository.ts)
 - provides all the potential functions and methods of product
 - 
-#### [cart.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/cart.model.ts)
+#### [cart.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/cart.model.ts)
 - provides all the potential functions and methods of Cart
 
 *-----------*
-#### [order.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/order.model.ts)
+#### [order.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/order.model.ts)
 - provides interface of Order
 
 
@@ -96,7 +96,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 
 ## 4.6 Restful web
 
-#### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/rest.datasource.ts)
+#### [rest.datasource.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/rest.datasource.ts)
 - this is to replace the local StaticDataSource, in order to enable the futher interaction between the data source `data.js` and user interface
 - to replace with static.datasource.ts, in order to interact with mock server
 - includes all the functions related to the `http`, are all `observable` |
