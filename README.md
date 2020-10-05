@@ -56,7 +56,7 @@ This project is trying to realize most of the functions of Angular : )  Check po
 - provides all the potential functions and methods of Cart
 
 *-----------*
-#### [order.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/services/order.model.ts)
+#### [order.model.ts](https://github.com/puddlejumper26/SportStore/blob/master/src/app/model/order.model.ts)
 - provides interface of Order
 
 
