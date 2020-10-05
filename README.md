@@ -4,6 +4,14 @@
 
 This project is trying to realize most of the functions of Angular : )  Check point 4.0 [Click here](https://github.com/puddlejumper26/SportStore/blob/master/README.md#40-skills--functions-implemented)
 
+## 1.1 How to use this app
+
+- download to local or clone
+- run npm install to install all dependencies
+- first need to run ` npm run json` to inititate the Json Server, after successful, open `localhost: 3500` should see the data
+- second run ` ng serve` to start the App, after successful, open ` localhost:4200` should see the Interface of the app
+- Admin Login `Name - Admin`, and `Password - secret`
+
 # 2.0 Demo (In Progress)
 
 - [LINK](https://puddlejumper26.github.io/SportStore/) --> this Github Page is updated only with StaticDataSouce, cause the Jason Server only works locally.
